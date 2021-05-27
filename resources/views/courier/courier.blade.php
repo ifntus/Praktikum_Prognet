@@ -4,7 +4,6 @@
     .dataTables_filter {
         float: right !important;
     }
-
 </style>
 @endsection
 @section('page-contents')
@@ -18,6 +17,12 @@
             <i class="fa fa-plus-square"></i>
             Tambah Data
         </button>
+        <a href="/courier/bin/trash" class="btn btn-primary btn-icon-split float-right">
+            <span class="icon text-white-50">
+                <i class="fas fa-arrow-right"></i>
+            </span>
+            <span class="text">Trash</span>
+        </a>
         {{-- ------------------------------------------Section & Tambah data---------------------------------------- --}}
         @if(Session::has('success'))
         <div class="alert alert-success">
@@ -114,7 +119,7 @@
             </div>
         </div>
 
-@endsection
+        @endsection
         {{-- javascript tambahan --}}
         @section('javascript')
         <!--Java Script untuk Data Table-->

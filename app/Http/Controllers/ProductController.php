@@ -223,6 +223,28 @@ class ProductController extends Controller
         $product_category_details->delete();
         return redirect()->intended(route('product.edit', ['id' => $product_id]))->with("success", "Successfully Delete Category");
     }
+    public function trash()
+    {
+            // mengambil data yang sudah dihapus
+            $item = Product::onlyTrashed()->get();
+            return view('product_trash',compact('item'));
+            // dd($cat);
+    }
+    
+        public function restore($id)
+    {
+            $item = Product::onlyTrashed()->where('id',$id);
+            $item->restore();
+            return redirect('/produk/bin/trash');
+    }   
+    public function delete_permanen($id)
+    {
+            $item = Product::onlyTrashed()->where('id',$id);
+            $item->forceDelete();
+     
+            return redirect('/produk/bin/trash');
+    }
+    
 
 }
 

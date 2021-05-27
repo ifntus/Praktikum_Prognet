@@ -90,4 +90,25 @@ class CourierController extends Controller
         $courier->delete($courier);
         return redirect('/courier');
     }
+    public function trash()
+    {
+            // mengambil data yang sudah dihapus
+            $data = Courier::onlyTrashed()->get();
+            return view('courier_trash',compact('data'));
+            // dd($cat);
+    }
+    
+        public function restore($id)
+    {
+            $data = Courier::onlyTrashed()->where('id',$id);
+            $data->restore();
+            return redirect('/courier/bin/trash');
+    }   
+    public function delete_permanen($id)
+    {
+            $data = Courier::onlyTrashed()->where('id',$id);
+            $data->forceDelete();
+     
+            return redirect('/courier/bin/trash');
+    }
 }

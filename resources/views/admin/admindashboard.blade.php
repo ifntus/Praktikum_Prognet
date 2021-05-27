@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -29,11 +28,14 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="{{asset('style/template/index.html')}}"><img src="{{asset('style/template/assets/img/logo-phone.png')}}" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href="{{asset('style/template/index.html')}}"><img
+						src="{{asset('style/template/assets/img/logo-phone.png')}}" alt="Klorofil Logo"
+						class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
-					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+					<button type="button" class="btn-toggle-fullwidth"><i
+							class="lnr lnr-arrow-left-circle"></i></button>
 				</div>
 				<form class="navbar-form navbar-left">
 					<div class="input-group">
@@ -49,16 +51,23 @@
 								<span class="badge bg-danger">5</span>
 							</a>
 							<ul class="dropdown-menu notifications">
-								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System
+										space is almost full</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9
+										unfinished tasks</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly
+										report is available</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly
+										meeting in 1 hour</a></li>
+								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your
+										request has been approved</a></li>
 								<li><a href="#" class="more">See all notifications</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+									class="lnr lnr-question-circle"></i> <span>Help</span> <i
+									class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Basic Use</a></li>
 								<li><a href="#">Working With Data</a></li>
@@ -67,13 +76,16 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{asset('style/template/assets/img/user.png')}}" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
+									src="{{asset('style/template/assets/img/user.png')}}" class="img-circle"
+									alt="Avatar"> <span>Samuel</span> <i
+									class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
 								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
 								<li><a href="{{ route('logout') }}"><i class="lnr lnr-exit"></i> <span>Logout</span>
-                                </a></li>
+									</a></li>
 							</ul>
 						</li>
 						<!-- <li>
@@ -91,8 +103,11 @@
 					<ul class="nav">
 						<li><a href="/admin" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="/courier" class=""><i class="lnr lnr-code"></i> <span>Courier</span></a></li>
-						<li><a href="/products" class=""><i class="lnr lnr-chart-bars"></i> <span>Product</span></a></li>
-						<li><a href="/categories" class=""><i class="lnr lnr-cog"></i> <span>Product Categories</span></a></li>
+						<li><a href="/products" class=""><i class="lnr lnr-chart-bars"></i> <span>Products</span></a>
+						</li>
+						<li><a href="/categories" class=""><i class="lnr lnr-cog"></i> <span>Product
+									Categories</span></a></li>
+						{{-- <li><a href="/list" class=""><i class="lnr lnr-cog"></i> <span>User List</span></a></li> --}}
 					</ul>
 				</nav>
 			</div>
@@ -154,15 +169,18 @@
 								</div>
 								<div class="col-md-3">
 									<div class="weekly-summary text-right">
-										<span class="number">2,315</span> <span class="percentage"><i class="fa fa-caret-up text-success"></i> 12%</span>
+										<span class="number">2,315</span> <span class="percentage"><i
+												class="fa fa-caret-up text-success"></i> 12%</span>
 										<span class="info-label">Total Sales</span>
 									</div>
 									<div class="weekly-summary text-right">
-										<span class="number">$5,758</span> <span class="percentage"><i class="fa fa-caret-up text-success"></i> 23%</span>
+										<span class="number">$5,758</span> <span class="percentage"><i
+												class="fa fa-caret-up text-success"></i> 23%</span>
 										<span class="info-label">Monthly Income</span>
 									</div>
 									<div class="weekly-summary text-right">
-										<span class="number">$65,938</span> <span class="percentage"><i class="fa fa-caret-down text-danger"></i> 8%</span>
+										<span class="number">$65,938</span> <span class="percentage"><i
+												class="fa fa-caret-down text-danger"></i> 8%</span>
 										<span class="info-label">Total Income</span>
 									</div>
 								</div>
@@ -170,19 +188,20 @@
 						</div>
 					</div>
 					<!-- END OVERVIEW -->
-						</div>
-					</div>
 				</div>
 			</div>
-			<!-- END MAIN CONTENT -->
 		</div>
-		<!-- END MAIN -->
-		<div class="clearfix"></div>
-		<footer>
-			<div class="container-fluid">
-				<p class="copyright">&copy; 2021 <a href="https://www.themeineed.com" target="_blank">Kelompok 4</a>. All Rights Reserved.</p>
-			</div>
-		</footer>
+	</div>
+	<!-- END MAIN CONTENT -->
+	</div>
+	<!-- END MAIN -->
+	<div class="clearfix"></div>
+	<footer>
+		<div class="container-fluid">
+			<p class="copyright">&copy; 2021 <a href="https://www.themeineed.com" target="_blank">Kelompok 4</a>. All
+				Rights Reserved.</p>
+		</div>
+	</footer>
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
@@ -193,7 +212,7 @@
 	<script src="{{asset('style/template/assets/vendor/chartist/js/chartist.min.js')}}"></script>
 	<script src="{{asset('style/template/assets/scripts/klorofil-common.js')}}"></script>
 	<script>
-	$(function() {
+		$(function() {
 		var data, options;
 
 		// headline charts
