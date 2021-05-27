@@ -103,4 +103,27 @@ class ProductCategoriesController extends Controller
 
         return redirect('/categories');
     }
+    public function trash()
+{
+    	// mengambil data yang sudah dihapus
+    	$cat = Product_Categories::onlyTrashed()->get();
+    	return view('categories_trash',compact('cat'));
+        // dd($cat);
 }
+
+    public function restore($id)
+{
+    	$cat = Product_Categories::onlyTrashed()->where('id',$id);
+    	$cat->restore();
+    	return redirect('/categories/bin/trash');
+}   
+public function delete_permanen($id)
+{
+    	$cat = Product_Categories::onlyTrashed()->where('id',$id);
+    	$cat->forceDelete();
+ 
+    	return redirect('/categories/bin/trash');
+}
+}
+
+

@@ -9,37 +9,22 @@
 @section('page-contents')
 <div class="panel">
     <div class="panel-heading">
-        <h3 class="panel-tittle">Product Categories</h3>
+        <h3 class="panel-title">Product</h3>
     </div>
     <div class="panel-body">
-        {{-- ------------------------------------------TOMBOL TAMBAH DATA---------------------------------------- --}}
-        <button type="button" class="btn btn-info " data-toggle="modal" data-target="#tambahdata">
-            <i class="fa fa-plus-square"></i>
-            Tambah Data
-        </button>
-        <a href="/categories/bin/trash" class="btn btn-primary btn-icon-split float-right">
+
+        <a href="/produk/bin/trash" class="btn btn-primary btn-icon-split float-right">
             <span class="icon text-white-50">
                 <i class="fas fa-arrow-right"></i>
             </span>
             <span class="text">Trash</span>
         </a>
-        {{-- ------------------------------------------Section & Tambah data---------------------------------------- --}}
-        @if(Session::has('success'))
-        <div class="alert alert-success">
-            <p>{{Session::get('success') }}</p>
-        </div>
-        <button type="button" class="edit btn btn-outline-info " data-toggle="modal" data-target="#tambahdata">
-            Tambah Data
-        </button>
-        @endif
-        <br>
-        <br>
 
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Category Name</th>
+                    <th>Nama User</th>
                     <th class="text-center">Action</th>
                 </tr>
             </thead>
@@ -47,15 +32,15 @@
                 @forelse ($data as $item)
                 <tr>
                     <td>{{$loop->iteration }}</td>
-                    <td>{{$item->category_name}}</td>
+                    <td>{{$item->name}}</td>
                     <td class="text-center">
                         {{-- TOMBOL DELETE DAN EDIT --}}
-                        <form action="/categories/{{$item->id}}" method="POST">
+                        <form action="/products/{{$item->id}}" method="POST">
                             @csrf
                             {{method_field('DELETE')}}
 
                             {{-- TOMBOL EDIT --}}
-                            <a href="/categories/{{$item->id}}/edit" class="btn btn-primary">Edit
+                            <a href="/products/{{$item->id}}/edit" class="btn btn-primary">Edit
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil"
                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -91,39 +76,7 @@
     </body>
 
     </html>
-
-    <!--------------------------------------- Modal Tambah data--------------------------------------------- -->
-    <div class="modal fade" id="tambahdata" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Menambahkan Data Baru</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="/categories" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="modal-body">
-                        {{-- Nama categories --}}
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Category</label>
-                            <div class="col-sm-10">
-                                <input name="category_name" type="text" class="form-control"
-                                    placeholder="Nama kategori yang ingin ditambahkan">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     @endsection
-
     {{-- javascript tambahan --}}
     @section('javascript')
     <!--Java Script untuk Data Table-->
@@ -131,9 +84,9 @@
     <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
     <script>
         $(document).ready(function () {
-        $('#example').DataTable();
-    });
-
+          $('#example').DataTable();
+      });
+  
     </script>
 
     @endsection

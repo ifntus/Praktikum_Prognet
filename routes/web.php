@@ -45,17 +45,30 @@ Route::prefix('admin')->group(function(){
 
 //Courier
 Route::resource('/courier','CourierController');
+Route::get('/courier/bin/trash', 'CourierController@trash');
+Route::get('/courier/restore/{id}', 'CourierController@restore');
+Route::get('/courier/deleteperm/{id}', 'CourierController@delete_permanen');
 
 //Product
 Route::resource('/products','ProductController');
+Route::get('/produk/bin/trash', 'ProductController@trash');
+Route::get('/produk/restore/{id}', 'ProductController@restore');
+Route::get('/produk/deleteperm/{id}', 'ProductController@delete_permanen');
+
 Route::get('/{id}/edit', 'ProductController@edit')->name('product.edit');
 Route::post('/{id}/add_image', 'ProductController@add_image')->name('product.add_image');
 Route::delete('/{id}/delete_image', 'ProductController@delete_image')->name('product.delete_image');
 Route::post('/{id}/add_cat', 'ProductController@add_cat')->name('product.add_cat');
 Route::delete('/{id}/delete_cat', 'ProductController@delete_cat')->name('product.delete_cat');
 
+//list user
+Route::resource('/list','ListuserController');
+
 //Categories
 Route::resource('/categories','ProductCategoriesController');
+Route::get('/categories/bin/trash', 'ProductCategoriesController@trash');
+Route::get('/categories/restore/{id}', 'ProductCategoriesController@restore');
+Route::get('/categories/deleteperm/{id}', 'ProductCategoriesController@delete_permanen');
 
 Route::prefix('admin/response')->group(function () {
     Route::get('/', 'ResponseController@index')->name('admin.response');
